@@ -67,7 +67,7 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
 // 4 esito con punteggio partita
 
-if ( risposte.length == 7){
+if ( risposte.length == 84){
 
   alert ("hai vinto il tuo punteggio è: " + risposte.length);
 
