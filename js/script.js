@@ -7,32 +7,36 @@ La partita termina quando il giocatore inserisce un numero “vietato” o raggi
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.*/
 
 
-// 1 genero tot numeri casuali da 1 a 100
-
  // funzione con cui puoi creare array con n numeri elementi diversi tra loro
 
 function bombeInArray (array, numeroElementi){
 
-
   while (array.length < numeroElementi) {
 
-    var numeroCasuale = Math.floor(Math.random() * (10 - 1) + 1);
+    var numeroCasuale = Math.floor(Math.random() * (100 - 1) + 1);
 
     if (array.includes(numeroCasuale) == false ){
 
       array.push(numeroCasuale);
+
     }
   }
 
   return array;
 }
 
+// fine funzione
+
+// 1 genero tot numeri casuali da 1 a 100
+
 var bombe = [];
 var risposte = [];
 
 var numeroUtente;
 
-bombeInArray(bombe, 3);
+// invoco funzione
+
+bombeInArray(bombe, 16);
 
 
 console.log(bombe);
@@ -44,18 +48,18 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
   numeroUtente = parseInt(prompt("inserisci un numero"));
 
   // 3 se numero utente è presente nella lista perde
+
   if ( isNaN(numeroUtente) )  {
 
     alert("devi inserire solo numeri");
 
-  }  else if (numeroUtente <= 0 || numeroUtente > 10 ){
+  }  else if (numeroUtente <= 0 || numeroUtente > 100 ){
 
     alert("deve essere compreso da 1 e 10");
 
   } else if ( risposte.includes(numeroUtente) == false ){
 
     risposte.push(numeroUtente);
-    console.log(risposte);
 
   }
 
@@ -72,3 +76,6 @@ if ( risposte.length == 7){
   alert("hai perso il tuo punteggio è: " + (risposte.length - 1) );
 
 }
+
+
+console.log(risposte);
