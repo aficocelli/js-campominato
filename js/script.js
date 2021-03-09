@@ -39,11 +39,25 @@ console.log(bombe);
 
 // 2 chiedo all'utente numeri casuali
 
-while ( risposte.length < 7 && bombe.includes(numeroUtente)==false ){
+while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
   numeroUtente = parseInt(prompt("inserisci un numero"));
 
-  risposte.push(numeroUtente);
+  if ( isNaN(numeroUtente) )  {
+
+    alert("devi inserire solo numeri");
+
+  }  else if (numeroUtente <= 0 || numeroUtente > 10 ){
+
+    alert("deve essere compreso da 1 e 10");
+
+  } else if ( risposte.includes(numeroUtente) == false ){
+
+    risposte.push(numeroUtente);
+    console.log(risposte);
+
+  }
+
 }
 
 
