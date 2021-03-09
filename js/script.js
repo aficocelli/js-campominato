@@ -9,11 +9,11 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
  // funzione con cui puoi creare array con n numeri elementi diversi tra loro
 
-function bombeInArray (array, numeroElementi){
+function bombeInArray (array, numeroElementi, max){
 
   while (array.length < numeroElementi) {
 
-    var numeroCasuale = Math.floor(Math.random() * (100 - 1) + 1);
+    var numeroCasuale = Math.floor(Math.random() * (max - 1) + 1);
 
     if (array.includes(numeroCasuale) == false ){
 
@@ -29,23 +29,41 @@ function bombeInArray (array, numeroElementi){
 
 // 1 genero tot numeri casuali da 1 a 100
 
-var numeriTotali = 100;
+// bonus livello di difficoltà
+var max = 100;
+
+var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0, 1 e 2"));
+
+if (livello == 1){
+
+  max = 80;
+
+} else if (livello == 2){
+
+  max = 50;
+
+}
+console.log(max);
+
+// bonus livello di difficoltà
+
 var numeroBombe = 16;
 var bombe = [];
+
 var risposte = [];
 
 var numeroUtente;
 
 // invoco funzione
 
-bombeInArray(bombe, numeroBombe);
+bombeInArray(bombe, numeroBombe, max);
 
 
 console.log(bombe);
 
 // 2 chiedo all'utente numeri casuali
 
-while ( risposte.length < (numeriTotali - numeroBombe) && bombe.includes(numeroUtente) == false ){
+while ( risposte.length < (max - numeroBombe) && bombe.includes(numeroUtente) == false ){
 
   numeroUtente = parseInt(prompt("inserisci un numero"));
 
@@ -55,9 +73,9 @@ while ( risposte.length < (numeriTotali - numeroBombe) && bombe.includes(numeroU
 
     alert("devi inserire solo numeri");
 
-  }  else if (numeroUtente <= 0 || numeroUtente > numeriTotali ){
+  }  else if (numeroUtente <= 0 || numeroUtente > max ){
 
-    alert("deve essere compreso da 1 e 10");
+    alert("deve essere compreso da 1 e " + max);
 
   } else if ( risposte.includes(numeroUtente) == false ){
 
@@ -69,7 +87,7 @@ while ( risposte.length < (numeriTotali - numeroBombe) && bombe.includes(numeroU
 
 // 4 esito con punteggio partita
 
-if ( risposte.length == (numeriTotali - numeroBombe)){
+if ( risposte.length == (max - numeroBombe)){
 
   alert ("hai vinto il tuo punteggio è: " + risposte.length);
 
