@@ -29,6 +29,8 @@ function bombeInArray (array, numeroElementi){
 
 // 1 genero tot numeri casuali da 1 a 100
 
+var numeriTotali = 100;
+var numeroBombe = 16;
 var bombe = [];
 var risposte = [];
 
@@ -36,14 +38,14 @@ var numeroUtente;
 
 // invoco funzione
 
-bombeInArray(bombe, 16);
+bombeInArray(bombe, numeroBombe);
 
 
 console.log(bombe);
 
 // 2 chiedo all'utente numeri casuali
 
-while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
+while ( risposte.length < (numeriTotali - numeroBombe) && bombe.includes(numeroUtente) == false ){
 
   numeroUtente = parseInt(prompt("inserisci un numero"));
 
@@ -53,7 +55,7 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
     alert("devi inserire solo numeri");
 
-  }  else if (numeroUtente <= 0 || numeroUtente > 100 ){
+  }  else if (numeroUtente <= 0 || numeroUtente > numeriTotali ){
 
     alert("deve essere compreso da 1 e 10");
 
@@ -67,7 +69,7 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
 // 4 esito con punteggio partita
 
-if ( risposte.length == 84){
+if ( risposte.length == (numeriTotali - numeroBombe)){
 
   alert ("hai vinto il tuo punteggio è: " + risposte.length);
 
