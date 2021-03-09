@@ -43,6 +43,7 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
   numeroUtente = parseInt(prompt("inserisci un numero"));
 
+  // 3 se numero utente è presente nella lista perde
   if ( isNaN(numeroUtente) )  {
 
     alert("devi inserire solo numeri");
@@ -60,15 +61,14 @@ while ( risposte.length < 7 && bombe.includes(numeroUtente) == false ){
 
 }
 
+// 4 esito con punteggio partita
 
 if ( risposte.length == 7){
 
-  alert("hai vinto");
+  alert ("hai vinto il tuo punteggio è: " + risposte.length);
+
 } else{
-  alert("hai perso");
+
+  alert("hai perso il tuo punteggio è: " + (risposte.length - 1) );
+
 }
-
-// 3 se numero utente è presente nella lista perde
-
-
-// 4 esito con punteggio partita
