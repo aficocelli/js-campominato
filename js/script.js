@@ -9,7 +9,7 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 
  // funzione con cui puoi creare array con n numeri elementi diversi tra loro
 
-function bombeInArray (array, numeroElementi, max){
+function bombeInArray (array, numeroElementi, max) {
 
   while (array.length < numeroElementi) {
 
@@ -31,8 +31,11 @@ function bombeInArray (array, numeroElementi, max){
 
 // bonus livello di difficoltà
 var max = 100;
+var livello;
 
-var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0, 1 e 2"));
+while (livello != 0 && livello != 1 && livello != 2){
+  var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0 per 100 numero, 1 per 80 numeri e 2 per 50 numeri"));
+}
 
 if (livello == 1){
 
