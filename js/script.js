@@ -28,6 +28,9 @@ function bombeInArray (array, numeroElementi){
 }
 
 var bombe = [];
+var risposte = [];
+
+var numeroUtente;
 
 bombeInArray(bombe, 3);
 
@@ -36,7 +39,20 @@ console.log(bombe);
 
 // 2 chiedo all'utente numeri casuali
 
+while ( risposte.length < 7 && bombe.includes(numeroUtente)==false ){
 
+  numeroUtente = parseInt(prompt("inserisci un numero"));
+
+  risposte.push(numeroUtente);
+}
+
+
+if ( risposte.length == 7){
+
+  alert("hai vinto");
+} else{
+  alert("hai perso");
+}
 
 // 3 se numero utente è presente nella lista perde
 
