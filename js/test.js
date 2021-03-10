@@ -37,8 +37,8 @@ function bombeInArray (array, numeroElementi, max) {
 // console.log(max);
 
 // bonus livello di difficoltà
-var max = 10;
-var numeroBombe = 3;
+var max = 100;
+var numeroBombe = 16;
 var bombe = [];
 
 
