@@ -24,7 +24,7 @@ function bombeInArray (array, numeroElementi, max) {
 
 while (livello != 0 && livello != 1 && livello != 2){
 
-  var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0 per 100 numero, 1 per 80 numeri e 2 per 50 numeri"));
+  var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0 per facile, 1 medio e 2 per difficile"));
 }
 var max = 100;
 //
@@ -81,13 +81,13 @@ for( var i = 0; i <= max; i++){
       if( bombe.includes(data)){
 
 
-        alert("hai perso!!! Il tuo punteggio è: " + (bombe.length - 16) + "!" + " Verrà ricaricata la pagina per una nuova partita!")
+        alert("Hai perso!!! Il tuo punteggio è: " + (bombe.length - 16) + "!" + " Verrà ricaricata la pagina per una nuova partita!")
 
         window.location.reload();
 
       } else if (isNaN(data)) {
 
-          alert("non puoi inserire lo stesso numero");
+          alert("Non puoi inserire lo stesso numero!!!");
 
         } else if (bombe.includes(data)==false) {
 
@@ -97,7 +97,7 @@ for( var i = 0; i <= max; i++){
 
             if (bombe.length== max){
 
-              alert("hai vinto!!!");
+              alert("Hai vintooooooo!!!");
             }
 
           }
