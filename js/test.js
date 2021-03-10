@@ -91,7 +91,8 @@ var box = document.getElementsByClassName('box');
 
           bombe.push(data);
           console.log(bombe);
-            if (bombe.length== 10){
+
+            if (bombe.length== max){
 
             alert("hai vinto!!!");
           }
