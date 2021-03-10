@@ -67,27 +67,38 @@ var box = document.getElementsByClassName('box');
 
 
 
-for( var i = 0; i <= 100; i++){
 
-  box[i].addEventListener("click",
+  for( var i = 0; i <= 100; i++){
 
-    function(){
-      var risposte = [];
-      var data = parseInt(this.getAttribute("data-number"));
+    box[i].addEventListener("click",
 
-      if( bombe.includes(data)){
+      function(){
 
-        alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
-        window.location.reload()
-      } else {
+        var data = parseInt(this.getAttribute("data-number"));
 
-        risposte.push(data);
+
+
+        if( bombe.includes(data)){
+
+          alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
+          window.location.reload()
+        }
+
+
+
+          else if (bombe.includes(data)==false) {
+
+          bombe.push(data);
+          console.log(bombe);
+            if (bombe.length== 10){
+
+            alert("hai vinto!!!");
+          }
+
+        }
 
       }
-      console.log(risposte);
 
-    }
+    );
 
-  );
-
-}
+  }
