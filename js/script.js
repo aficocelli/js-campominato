@@ -90,6 +90,7 @@ while ( risposte.length < (max - numeroBombe) && bombe.includes(numeroUtente) ==
 
 }
 
+
 // 4 esito con punteggio partita
 
 if ( risposte.length == (max - numeroBombe)){
