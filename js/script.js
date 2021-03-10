@@ -84,6 +84,8 @@ while ( risposte.length < (max - numeroBombe) && bombe.includes(numeroUtente) ==
 
     risposte.push(numeroUtente);
 
+  } else{
+    alert("non puoi inserire lo stesso numero");
   }
 
 }
