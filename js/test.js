@@ -80,7 +80,8 @@ for( var i = 0; i <= max; i++){
 
       if( bombe.includes(data)){
 
-        alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
+
+        alert("hai perso!!! Il tuo punteggio è: " + (bombe.length - 16) + "!" + " Verrà ricaricata la pagina per una nuova partita!")
 
         window.location.reload();
 
