@@ -76,6 +76,7 @@ var box = document.getElementsByClassName('box');
 
         var data = parseInt(this.getAttribute("data-number"));
 
+        this.classList.add("casella-cliccata");
 
 
         if( bombe.includes(data)){

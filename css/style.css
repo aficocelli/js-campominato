@@ -16,3 +16,8 @@
   width: 10%;
   text-align: center;
 }
+
+.casella-cliccata{
+
+  background-color: red;
+}
