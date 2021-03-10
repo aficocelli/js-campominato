@@ -83,13 +83,14 @@ var box = document.getElementsByClassName('box');
 
           alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
           window.location.reload()
-        }
+        } else if (isNaN(data)){
 
+          alert("non puoi inserire lo stesso numero");
 
-
-          else if (bombe.includes(data)==false) {
+        } else if (bombe.includes(data)==false) {
 
           bombe.push(data);
+          this.removeAttribute("data-number");
           console.log(bombe);
 
             if (bombe.length== max){
