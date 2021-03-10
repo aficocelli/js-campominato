@@ -8,12 +8,13 @@ function bombeInArray (array, numeroElementi, max) {
 
    if (array.includes(numeroCasuale) == false ){
 
-     array.push(numeroCasuale);
+      array.push(numeroCasuale);
 
-   }
- }
+    }
+  }
 
  return array;
+
 }
 
 // fine funzione
@@ -21,27 +22,28 @@ function bombeInArray (array, numeroElementi, max) {
 // bonus livello di difficoltà
 
 
-// while (livello != 0 && livello != 1 && livello != 2){
-//   var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0 per 100 numero, 1 per 80 numeri e 2 per 50 numeri"));
-// }
+while (livello != 0 && livello != 1 && livello != 2){
+
+  var livello = parseInt(prompt("Scegli il livello di difficoltà tra 0 per 100 numero, 1 per 80 numeri e 2 per 50 numeri"));
+}
+var max = 100;
 //
-// if (livello == 1){
-//
-//   max = 80;
-//
-// } else if (livello == 2){
-//
-//   max = 50;
-//
-// }
+if (livello == 1){
+
+  max = 80;
+
+} else if (livello == 2){
+
+  max = 50;
+
+}
 // console.log(max);
 
 // bonus livello di difficoltà
-var max = 100;
+
 var numeroBombe = 16;
+
 var bombe = [];
-
-
 
 var numeroUtente;
 
@@ -49,12 +51,9 @@ var numeroUtente;
 
 bombeInArray(bombe, numeroBombe, max);
 
-
 console.log(bombe);
 
-
 var container = document.getElementById('container');
-
 
 
 for ( var j = 1; j <= max; j++){
@@ -68,40 +67,42 @@ var box = document.getElementsByClassName('box');
 
 
 
-  for( var i = 0; i <= 100; i++){
+for( var i = 0; i <= max; i++){
 
-    box[i].addEventListener("click",
+  box[i].addEventListener("click",
 
-      function(){
+    function(){
 
-        var data = parseInt(this.getAttribute("data-number"));
+      var data = parseInt(this.getAttribute("data-number"));
 
-        this.classList.add("casella-cliccata");
+      this.classList.add("casella-cliccata");
 
 
-        if( bombe.includes(data)){
+      if( bombe.includes(data)){
 
-          alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
-          window.location.reload()
-        } else if (isNaN(data)){
+        alert("hai perso!!! Verrà ricaricata la pagina per una nuova partita!")
+
+        window.location.reload();
+
+      } else if (isNaN(data)) {
 
           alert("non puoi inserire lo stesso numero");
 
         } else if (bombe.includes(data)==false) {
 
-          bombe.push(data);
-          this.removeAttribute("data-number");
-          console.log(bombe);
+            bombe.push(data);
+            this.removeAttribute("data-number");
+            console.log(bombe);
 
             if (bombe.length== max){
 
-            alert("hai vinto!!!");
+              alert("hai vinto!!!");
+            }
+
           }
 
-        }
+    }
 
-      }
+  );
 
-    );
-
-  }
+}
